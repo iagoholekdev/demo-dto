@@ -1,0 +1,21 @@
+# Database Configuration
+quarkus:
+  datasource:
+    db-kind: postgresql
+    # driver: org.postgresql.Driver
+    username: postgres
+    password: root
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/project2
+      driver: org.postgresql.Driver
+      max-size: 10
+  hibernate-orm:
+    database:
+      generation: none
+    log:
+      sql: true
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    migrate-at-start: true
+    locations: classpath:db/migration
+    datasource: default
